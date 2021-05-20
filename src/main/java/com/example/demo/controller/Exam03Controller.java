@@ -15,9 +15,10 @@ public class Exam03Controller {
 
 	@RequestMapping("/buy")
 	public String buyOnClicked(Integer item1, Integer item2, Integer item3, Model model) {
-		Integer res = item1 + item2 + item3;
-		model.addAttribute("notax", res);
-		model.addAttribute("taxIncluded", (int) (res*1.1));
+		Integer totalPrice = item1 + item2 + item3;
+		model.addAttribute("notaxPrice", totalPrice);
+		Integer taxIncludedPrice = (int) (totalPrice*1.1);
+		model.addAttribute("taxIncludedPrice", taxIncludedPrice);
 		return "exam03-result";
 	}
 }

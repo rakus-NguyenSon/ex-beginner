@@ -8,8 +8,8 @@
 	<h3>合計金額</h3>
 	
 	<ul style="list-style-type:square">
-		<li>税抜き価格<br><span th:text="${notax}"></span><span>円</span></li>
-		<li>税込み価格<br><span th:text="${taxIncluded}"></span><span>円</span></li>
+		<li>税抜き価格<br><span th:text="${#numbers.formatInteger(notaxPrice,2,'COMMA')}"></span><span>円</span></li>
+		<li>税込み価格<br><span th:text="${#numbers.formatInteger(taxIncludedPrice,2,'COMMA')}"></span><span>円</span></li>
 	</ul>
 </body>
 </html>
